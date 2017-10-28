@@ -24,19 +24,19 @@ This is not for production systems. Please use std::string instead.
 
     Constructor
 
-* 实现了迭代器
+2. 实现了迭代器
 
     Iterator
 
-* 实现了字符串比较、字符串连接的符号重载
+3. 实现了字符串比较、字符串连接的符号重载
 
     Comparation, Concat, Overload
 
-* 通过memcpy()获得了尚可的效率
+4. 通过memcpy()获得了尚可的效率
 
     Used memcpy() to enhance efficency
 
-* 部分支持iostream输入输出
+5. 部分支持iostream输入输出
 
     Partly support iostream operations
 
@@ -46,11 +46,11 @@ This is not for production systems. Please use std::string instead.
 
     No dynamic capacity
 
-* 未实现对iostream中getline()的支持
+2. 未实现对iostream中getline()的支持
 
     Do not support getline()
 
-* 未实现find()等字符串操作
+3. 未实现find()等字符串操作
 
     Do not support find() etc.
 
