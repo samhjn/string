@@ -1,6 +1,6 @@
 # C++ string类实现
 
-> A very simple implemention of C++ string
+> A very simple implementation of C++ string
 
 ## 许可协议 License
 
