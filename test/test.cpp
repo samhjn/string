@@ -99,6 +99,7 @@ void test_iterator()
 
 	string s = "This is a test text.";
 
+	#if __cplusplus >= 201103L
 	for (string::const_iterator it=s.cbegin(); it!=s.cend(); ++it)
 	{
 		cout << *it;
@@ -110,6 +111,7 @@ void test_iterator()
 		cout << *it;
 	}
 	cout << endl;
+	#endif
 
 	for (string::iterator it=s.begin(); it!=s.end(); ++it)
 	{

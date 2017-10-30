@@ -36,25 +36,37 @@ namespace test
 		unsigned long long len;
 	public:
 		typedef char * iterator; // 迭代器定义
-		typedef const char * const_iterator;
 		typedef std::reverse_iterator<iterator> reverse_iterator;
+
+		#if __cplusplus >= 201103L
+		typedef const char * const_iterator;
 		typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
+		#endif
 
 		string ();  // 构造函数
-		string (const string &s);
+		string (const string &s);  // 拷贝构造函数
 		string (const char *s);
 		string& operator= (const string &s);
+
+		#if __cplusplus >= 201103L
+		string (string &&s);  // 移动构造函数
+		string& operator= (string &&s);
+		#endif
+
 		string& operator+= (const string &s); //运算符重载-连接并赋值
 		string& operator+= (const char &c);
 
 		iterator begin(); // 获取迭代器
 		iterator end();
-		const_iterator cbegin();
-		const_iterator cend();
 		reverse_iterator rbegin();
 		reverse_iterator rend();
+
+		#if __cplusplus >= 201103L
+		const_iterator cbegin();
+		const_iterator cend();
 		const_reverse_iterator crbegin();
 		const_reverse_iterator crend();
+		#endif
 
 		~string ();  // 析构函数
 

@@ -63,22 +63,34 @@ namespace test{
 		return *this;
 	}
 
+	#if __cplusplus >= 201103L
+	string::string(string &&s) //移动构造函数
+	{
+		this->len = s.len;
+		this->str = s.str;
+		s.len = 0;
+		s.str = new char[1];
+	}
+
+	string& string::operator= (string &&s) //重载移动赋值操作
+	{
+		this->len = s.len;
+		this->str = s.str;
+		if (this!=&s)
+		{
+			s.len = 0;
+			s.str = new char[1];
+		}
+		return *this;
+	}
+	#endif
+
 	string::iterator string::begin()
 	{
 		return this->str;
 	}
 
 	string::iterator string::end()
-	{
-		return this->str + this->len;
-	}
-
-	string::const_iterator string::cbegin()
-	{
-		return this->str;
-	}
-
-	string::const_iterator string::cend()
 	{
 		return this->str + this->len;
 	}
@@ -93,6 +105,17 @@ namespace test{
 		return string::reverse_iterator(this->str);
 	}
 
+	#if __cplusplus >= 201103L
+	string::const_iterator string::cbegin()
+	{
+		return this->str;
+	}
+
+	string::const_iterator string::cend()
+	{
+		return this->str + this->len;
+	}
+
 	string::const_reverse_iterator string::crbegin()
 	{
 		return string::const_reverse_iterator(this->str + this->len);
@@ -102,6 +125,7 @@ namespace test{
 	{
 		return string::const_reverse_iterator(this->str);
 	}
+	#endif
 
 	string::~string()  //析构函数
 	{
