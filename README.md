@@ -10,7 +10,7 @@ No License, free to use.
 
 ## 警告 Warning
 
-The library is a test library. It may not as efficient and safety as C++ standard library.
+The library is a test library. It may not as efficient and safe as C++ standard library.
 
 This is not for production systems. Please use std::string instead.
 
