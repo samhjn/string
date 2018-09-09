@@ -1,6 +1,6 @@
 /*
  *** WARNING!!!  警告！！！ ***
- * The library is a test library. It may not as efficient and safety as C++ standard library.
+ * The library is a test library. It may not as efficient and safe as C++ standard library.
  * 该库文件仅供测试使用。此库有可能无法达到C++标准库的效率与安全性。
  * This is not for production systems. Please use std::string instead.
  * 它不是为生产系统设计的。请使用std::string替代它。
